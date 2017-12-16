@@ -148,7 +148,6 @@ Post.remove = function (time, callback) {
         })
     })
 }
-
 //搜索
 Post.search = function (keyword,callback) {
     mongodb.open(function (err, db) {
