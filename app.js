@@ -10,6 +10,7 @@ var setting = require('./settings');
 var routes = require('./routes/index');
 //flash插件
 // var flash = require('connect-flash');
+
 var app = express();
 
 // view engine setup
