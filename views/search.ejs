@@ -1,0 +1,42 @@
+<% include header %>
+<div class="toolbar">
+    <button class="btn btn-danger">删除</button>
+    <form method="get" action="/search" class="col-sm-3 pull-right">
+        <div class="input-group">
+            <input type="text" class="form-control" name="keyword" placeholder="Search for...">
+        </div><!-- /input-group -->
+    </form><!-- /.col-lg-6 -->
+</div>
+<br>
+<div class="table-striped">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>用户</th>
+            <th>姓名</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th>注册时间
+            </th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% docs.forEach(function (doc) {%>
+        <tr>
+            <td><%= doc.username %></td>
+            <td><%= doc.name %></td>
+            <td><%= doc.tel %></td>
+            <td><%= doc.email %></td>
+            <td><%= doc.time %></td>
+            <td>
+                <button class="btn btn-success" onclick="location.href = '/edit/<%= doc.name %>/<%= doc.time %>'">修改</button>
+                <button class="btn btn-danger" onclick="location.href = '/remove/<%= doc.time %>'" >删除</button>
+            </td>
+        </tr>
+        <%}) %>
+        </tbody>
+
+    </table>
+</div>
+<% include footer %>
