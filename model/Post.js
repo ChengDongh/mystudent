@@ -148,7 +148,6 @@ Post.remove = function (time, callback) {
         })
     })
 }
-//全部删除
 
 //搜索
 Post.search = function (keyword,callback) {
